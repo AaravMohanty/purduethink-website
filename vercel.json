@@ -1,0 +1,45 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "trailingSlash": false,
+  "redirects": [
+    { "source": "/home", "destination": "/", "permanent": true },
+    { "source": "/our-alumni", "destination": "/our-people", "permanent": true },
+    { "source": "/our-people-1", "destination": "/our-people", "permanent": true },
+    { "source": "/photo-gallery", "destination": "/our-people", "permanent": true },
+    { "source": "/project-teams", "destination": "/projects", "permanent": true },
+    { "source": "/news-events", "destination": "/", "permanent": true },
+    { "source": "/newsletter-1", "destination": "/", "permanent": true },
+    { "source": "/new-page", "destination": "/", "permanent": true },
+    { "source": "/client-interest", "destination": "/", "permanent": true },
+    { "source": "/apply", "destination": "/recruitment-timeline", "permanent": true },
+    { "source": "/consulting", "destination": "/about-consulting", "permanent": true },
+    { "source": "/people", "destination": "/our-people", "permanent": true },
+    { "source": "/interview", "destination": "/interview-process", "permanent": true }
+  ],
+  "headers": [
+    {
+      "source": "/img/(.*)",
+      "headers": [{ "key": "Cache-Control", "value": "public, max-age=31536000, immutable" }]
+    },
+    {
+      "source": "/fonts/(.*)",
+      "headers": [{ "key": "Cache-Control", "value": "public, max-age=31536000, immutable" }]
+    },
+    {
+      "source": "/css/(.*)",
+      "headers": [{ "key": "Cache-Control", "value": "public, max-age=604800" }]
+    },
+    {
+      "source": "/js/(.*)",
+      "headers": [{ "key": "Cache-Control", "value": "public, max-age=604800" }]
+    },
+    {
+      "source": "/(.*)",
+      "headers": [
+        { "key": "X-Content-Type-Options", "value": "nosniff" },
+        { "key": "Referrer-Policy", "value": "strict-origin-when-cross-origin" },
+        { "key": "X-Frame-Options", "value": "SAMEORIGIN" }
+      ]
+    }
+  ]
+}
