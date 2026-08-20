@@ -34,6 +34,33 @@
       window.addEventListener('scroll', onScroll, { passive: true });
       onScroll();
 
+      // ---- mobile nav toggle ----
+      const navToggle = nav ? nav.querySelector('.ptk-navtoggle') : null;
+      if (navToggle) {
+        navToggle.addEventListener('click', () => {
+          const open = nav.getAttribute('data-open') === '1';
+          nav.setAttribute('data-open', open ? '0' : '1');
+          navToggle.setAttribute('aria-expanded', open ? 'false' : 'true');
+        });
+        // close it when a link inside is followed
+        nav.addEventListener('click', (e) => {
+          if (e.target.closest('a')) {
+            nav.setAttribute('data-open', '0');
+            navToggle.setAttribute('aria-expanded', 'false');
+          }
+        });
+      }
+
+      // ---- member cards: tap to reveal the detail overlay (no hover on touch) ----
+      if (window.matchMedia('(hover: none)').matches) {
+        root.querySelectorAll('.ptk-person').forEach((card) => {
+          card.addEventListener('click', (e) => {
+            if (e.target.closest('a')) return;   // let the LinkedIn badge through
+            card.setAttribute('data-show', card.getAttribute('data-show') === '1' ? '0' : '1');
+          });
+        });
+      }
+
       // ---- accordion rows: data-acc on a button, panel is the sibling .ptk-acc-panel ----
       const setAcc = (btn, force) => {
         const panel = btn.parentElement.querySelector('.ptk-acc-panel');
