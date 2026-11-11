@@ -1231,10 +1231,8 @@
 }
 
 /* ---- member grids: 5 across; 3 on tablet, 2 on phones ---- */
-/* PMs: centred heading over a centred 3x2 grid; cards are exactly one fifth of the
-   row like the exec and consultant cards, so every card on the page is the same size */
-.ptk-pm-head { text-align: center; margin-bottom: 44px; }
-.ptk-pm-cards { display: grid; grid-template-columns: repeat(3, calc((100% - 88px) / 5)); justify-content: center; gap: 22px; }
+/* PMs: all six in one row (exec and consultants are 5 across) */
+.ptk-pm-cards { display: grid; grid-template-columns: repeat(6, minmax(0, 1fr)); gap: 22px; }
 @media (max-width: 900px) {
   #ptk-root .ptk-people-grid { grid-template-columns: repeat(3, 1fr) !important; gap: 18px !important; }
 }
