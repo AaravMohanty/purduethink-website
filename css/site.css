@@ -1231,16 +1231,10 @@
 }
 
 /* ---- member grids: 5 across; 3 on tablet, 2 on phones ---- */
-/* PMs: intro in the first two columns, a 3x2 card grid in the last three, so cards
-   line up with (and match the size of) the exec and consultant grids */
-.ptk-pm-layout { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 22px; align-items: start; }
-.ptk-pm-intro { grid-column: span 2; padding-right: 32px; position: sticky; top: 120px; }
-.ptk-pm-cards { grid-column: span 3; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 22px; }
-@media (max-width: 900px) {
-  .ptk-pm-layout { grid-template-columns: minmax(0, 1fr); gap: 32px; }
-  .ptk-pm-intro, .ptk-pm-cards { grid-column: auto; }
-  .ptk-pm-intro { position: static; padding-right: 0; }
-}
+/* PMs: centred heading over a centred 3x2 grid; cards are exactly one fifth of the
+   row like the exec and consultant cards, so every card on the page is the same size */
+.ptk-pm-head { text-align: center; margin-bottom: 44px; }
+.ptk-pm-cards { display: grid; grid-template-columns: repeat(3, calc((100% - 88px) / 5)); justify-content: center; gap: 22px; }
 @media (max-width: 900px) {
   #ptk-root .ptk-people-grid { grid-template-columns: repeat(3, 1fr) !important; gap: 18px !important; }
 }
