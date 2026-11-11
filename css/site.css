@@ -1230,9 +1230,16 @@
   #ptk-root a[class^="h0"] { min-height: 40px; }
 }
 
-/* ---- member grids: 5 across (PMs as two rows of 3); 3 on tablet, 2 on phones ---- */
-@media (min-width: 901px) {
-  .ptk-pm-grid > .ptk-person:nth-child(4) { grid-column-start: 1; }
+/* ---- member grids: 5 across; 3 on tablet, 2 on phones ---- */
+/* PMs: intro in the first two columns, a 3x2 card grid in the last three, so cards
+   line up with (and match the size of) the exec and consultant grids */
+.ptk-pm-layout { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 22px; align-items: start; }
+.ptk-pm-intro { grid-column: span 2; padding-right: 32px; position: sticky; top: 120px; }
+.ptk-pm-cards { grid-column: span 3; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 22px; }
+@media (max-width: 900px) {
+  .ptk-pm-layout { grid-template-columns: minmax(0, 1fr); gap: 32px; }
+  .ptk-pm-intro, .ptk-pm-cards { grid-column: auto; }
+  .ptk-pm-intro { position: static; padding-right: 0; }
 }
 @media (max-width: 900px) {
   #ptk-root .ptk-people-grid { grid-template-columns: repeat(3, 1fr) !important; gap: 18px !important; }
