@@ -1230,7 +1230,10 @@
   #ptk-root a[class^="h0"] { min-height: 40px; }
 }
 
-/* ---- member grids: exec 5, PMs 6, consultants 5 across; 3 on tablet, 2 on phones ---- */
+/* ---- member grids: 5 across (PMs as two rows of 3); 3 on tablet, 2 on phones ---- */
+@media (min-width: 901px) {
+  .ptk-pm-grid > .ptk-person:nth-child(4) { grid-column-start: 1; }
+}
 @media (max-width: 900px) {
   #ptk-root .ptk-people-grid { grid-template-columns: repeat(3, 1fr) !important; gap: 18px !important; }
 }
