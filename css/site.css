@@ -1233,6 +1233,17 @@
 /* ---- member grids: 5 across; 3 on tablet, 2 on phones ---- */
 /* PMs: all six in one row (exec and consultants are 5 across) */
 .ptk-pm-cards { display: grid; grid-template-columns: repeat(6, minmax(0, 1fr)); gap: 22px; }
+/* Consultants: same card size as the PMs (6 across); an incomplete last row is centred */
+.ptk-cons-grid { display: flex; flex-wrap: wrap; justify-content: center; gap: 22px; }
+.ptk-cons-grid > .ptk-person { flex: 0 0 calc((100% - 110px) / 6); box-sizing: border-box; min-width: 0; }
+@media (max-width: 900px) {
+  #ptk-root .ptk-cons-grid { gap: 18px; }
+  #ptk-root .ptk-cons-grid > .ptk-person { flex-basis: calc((100% - 36px) / 3); }
+}
+@media (max-width: 600px) {
+  #ptk-root .ptk-cons-grid { gap: 14px; }
+  #ptk-root .ptk-cons-grid > .ptk-person { flex-basis: calc((100% - 14px) / 2); }
+}
 @media (max-width: 900px) {
   #ptk-root .ptk-people-grid { grid-template-columns: repeat(3, 1fr) !important; gap: 18px !important; }
 }

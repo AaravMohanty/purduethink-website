@@ -60,6 +60,8 @@ classes; they were inline `style-hover` attributes before unbundling.
 
 ## Content still to fill
 
-- Current-member and alumnus quotes on the home page (bracketed placeholders).
-- Recruitment dates are Fall 2026; update each semester in the `#apply-timeline` section.
-- The apply button points at a Google Form — swap the URL when the cycle changes.
+- Recruitment page is in its "applications closed" state after Fall 2026; add the next
+  cycle's dates and re-point the apply buttons at the new Google Form when it opens.
+- Headshots: crop to 4:5 with every face on the same eye line and scale as the existing
+  `img/ptk-p-*-hs*.webp` files, and give replacements a new filename (images are
+  served with a one-year immutable cache).
