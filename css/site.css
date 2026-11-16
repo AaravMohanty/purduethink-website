@@ -1236,6 +1236,8 @@
 /* Consultants: same card size as the PMs (6 across); an incomplete last row is centred */
 .ptk-cons-grid { display: flex; flex-wrap: wrap; justify-content: center; gap: 22px; }
 .ptk-cons-grid > .ptk-person { flex: 0 0 calc((100% - 110px) / 6); box-sizing: border-box; min-width: 0; }
+/* 5 across when the head count leaves a better last row (e.g. 19 = 5+5+5+4, not 6+6+6+1) */
+.ptk-cons-grid.ptk-cons-5 > .ptk-person { flex-basis: calc((100% - 88px) / 5); }
 @media (max-width: 900px) {
   #ptk-root .ptk-cons-grid { gap: 18px; }
   #ptk-root .ptk-cons-grid > .ptk-person { flex-basis: calc((100% - 36px) / 3); }
