@@ -62,6 +62,8 @@ classes; they were inline `style-hover` attributes before unbundling.
 
 - Recruitment page is in its "applications closed" state after Fall 2026; add the next
   cycle's dates and re-point the apply buttons at the new Google Form when it opens.
+- Member order on Our People: exec board by role (Managing Director first); PMs and
+  consultants alphabetical by last name. Insert new members in that order.
 - Headshots: crop to 4:5 with every face on the same eye line and scale as the existing
   `img/ptk-p-*-hs*.webp` files, and give replacements a new filename (images are
   served with a one-year immutable cache).
